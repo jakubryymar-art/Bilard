@@ -20,7 +20,7 @@
 <body class="bg-neutral-950 text-neutral-100 font-sans antialiased">
 
     <!-- NAWIGACJA (Dostosowana - Galeria zaznaczona na bursztynowo) -->
-    <nav class="bg-neutral-900 border-b border-neutral-800 sticky top-0 z-50">
+<nav class="bg-neutral-900 border-b border-neutral-800 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="text-3xl font-bold tracking-widest uppercase">Billkros<span class="text-amber-500">.</span></a>
@@ -30,6 +30,8 @@
                 </button>
 
                 <div class="hidden lg:flex space-x-4 xl:space-x-6 text-sm font-medium tracking-wide h-full items-center">
+                    
+                    <!-- BILARD -->
                     <div class="relative group h-full flex items-center">
                         <a href="kategoria.html" class="hover:text-amber-500 transition flex items-center uppercase">Bilard <span class="ml-1 text-[10px]">▼</span></a>
                         <div class="absolute top-20 left-0 w-56 bg-neutral-950 border border-neutral-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0">
@@ -42,30 +44,44 @@
                             </ul>
                         </div>
                     </div>
+                    
+                    <!-- PIŁKARZYKI -->
                     <div class="relative group h-full flex items-center">
                         <a href="#" class="hover:text-amber-500 transition flex items-center uppercase">Stół do piłkarzyków <span class="ml-1 text-[10px]">▼</span></a>
+                        <div class="absolute top-20 left-0 w-56 bg-neutral-950 border border-neutral-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0">
+                            <ul class="py-3 text-neutral-100">
+                                <li><a href="kategoria.html?filtr=pilkarzyki-rekreacyjne" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Rekreacyjne</a></li>
+                                <li><a href="kategoria.html?filtr=pilkarzyki-zarobkowe" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Zarobkowe</a></li>
+                            </ul>
+                        </div>
                     </div>
+                    
+                    <!-- CYMBERGAJE -->
                     <div class="relative group h-full flex items-center">
                         <a href="#" class="hover:text-amber-500 transition flex items-center uppercase">Cymbergaje <span class="ml-1 text-[10px]">▼</span></a>
+                        <div class="absolute top-20 left-0 w-56 bg-neutral-950 border border-neutral-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0">
+                            <ul class="py-3 text-neutral-100">
+                                <li><a href="kategoria.html?filtr=cymbergaje-rekreacyjne" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Rekreacyjne</a></li>
+                                <li><a href="kategoria.html?filtr=cymbergaje-zarobkowe" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Zarobkowe</a></li>
+                            </ul>
+                        </div>
                     </div>
+                    
+                    <!-- INNE -->
                     <div class="relative group h-full flex items-center">
                         <a href="#" class="hover:text-amber-500 transition flex items-center uppercase">Inne <span class="ml-1 text-[10px]">▼</span></a>
+                        <div class="absolute top-20 left-0 w-56 bg-neutral-950 border border-neutral-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0">
+                            <ul class="py-3 text-neutral-100">
+                                <li><a href="kategoria.html?filtr=blaty-drewniane" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Blaty drewniane</a></li>
+                                <li><a href="kategoria.html?filtr=stoliki-szachowe" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Stoliki szachowe</a></li>
+                                <li><a href="kategoria.html?filtr=akcesoria" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Akcesoria</a></li>
+                            </ul>
+                        </div>
                     </div>
                     
                     <a href="dzierzawa.html" class="hover:text-amber-500 transition uppercase">Dzierżawa</a>
                     <a href="kontakt.html" class="hover:text-amber-500 transition uppercase">Kontakt</a>
                     <a href="galeria.html" class="hover:text-amber-500 transition uppercase">Galeria</a>
-
-                    <!-- Usługi -->
-                    <div class="relative group h-full flex items-center">
-                        <a href="#" class="hover:text-amber-500 transition flex items-center uppercase">Usługi <span class="ml-1 text-[10px]">▼</span></a>
-                        <div class="absolute top-20 right-0 w-56 bg-neutral-950 border border-neutral-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0">
-                            <ul class="py-3 text-neutral-100">
-                                <li><a href="#" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Branding na produkcie</a></li>
-                                <li><a href="#" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Serwis</a></li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -78,23 +94,42 @@
                     <ul id="mob-bilard" class="hidden pl-4 mt-2 space-y-3 py-2 text-sm text-neutral-400">
                         <li><a href="kategoria.html?filtr=pool" class="block hover:text-amber-500">Stoły Pool</a></li>
                         <li><a href="kategoria.html?filtr=snooker" class="block hover:text-amber-500">Stoły Snooker</a></li>
+                        <li><a href="kategoria.html?filtr=blaty" class="block hover:text-amber-500">Blaty do bilardów</a></li>
+                        <li><a href="kategoria.html?filtr=lampy" class="block hover:text-amber-500">Lampy bilardowe</a></li>
+                        <li><a href="kategoria.html?filtr=stojaki" class="block hover:text-amber-500">Stojaki bilardowe</a></li>
                     </ul>
                 </div>
-                <a href="#" class="block py-3 font-medium uppercase tracking-wide border-b border-neutral-800">Stół do piłkarzyków</a>
-                <a href="#" class="block py-3 font-medium uppercase tracking-wide border-b border-neutral-800">Cymbergaje</a>
-                <a href="#" class="block py-3 font-medium uppercase tracking-wide border-b border-neutral-800">Inne Produkty</a>
+                <div>
+                    <button onclick="toggleMobileSubmenu('mob-pilkarzyki')" class="w-full text-left py-3 font-medium uppercase tracking-wide flex justify-between items-center border-b border-neutral-800">
+                        Stół do piłkarzyków <span class="text-xs">▼</span>
+                    </button>
+                    <ul id="mob-pilkarzyki" class="hidden pl-4 mt-2 space-y-3 py-2 text-sm text-neutral-400">
+                        <li><a href="kategoria.html?filtr=pilkarzyki-rekreacyjne" class="block hover:text-amber-500">Rekreacyjne</a></li>
+                        <li><a href="kategoria.html?filtr=pilkarzyki-zarobkowe" class="block hover:text-amber-500">Zarobkowe</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <button onclick="toggleMobileSubmenu('mob-cymbergaje')" class="w-full text-left py-3 font-medium uppercase tracking-wide flex justify-between items-center border-b border-neutral-800">
+                        Cymbergaje <span class="text-xs">▼</span>
+                    </button>
+                    <ul id="mob-cymbergaje" class="hidden pl-4 mt-2 space-y-3 py-2 text-sm text-neutral-400">
+                        <li><a href="kategoria.html?filtr=cymbergaje-rekreacyjne" class="block hover:text-amber-500">Rekreacyjne</a></li>
+                        <li><a href="kategoria.html?filtr=cymbergaje-zarobkowe" class="block hover:text-amber-500">Zarobkowe</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <button onclick="toggleMobileSubmenu('mob-inne')" class="w-full text-left py-3 font-medium uppercase tracking-wide flex justify-between items-center border-b border-neutral-800">
+                        Inne <span class="text-xs">▼</span>
+                    </button>
+                    <ul id="mob-inne" class="hidden pl-4 mt-2 space-y-3 py-2 text-sm text-neutral-400">
+                        <li><a href="kategoria.html?filtr=blaty-drewniane" class="block hover:text-amber-500">Blaty drewniane</a></li>
+                        <li><a href="kategoria.html?filtr=stoliki-szachowe" class="block hover:text-amber-500">Stoliki szachowe</a></li>
+                        <li><a href="kategoria.html?filtr=akcesoria" class="block hover:text-amber-500">Akcesoria</a></li>
+                    </ul>
+                </div>
                 <a href="dzierzawa.html" class="block py-3 font-medium uppercase tracking-wide border-b border-neutral-800">Dzierżawa</a>
                 <a href="kontakt.html" class="block py-3 font-medium uppercase tracking-wide border-b border-neutral-800">Kontakt</a>
-                <a href="#" class="block py-3 font-medium uppercase tracking-wide border-b border-neutral-800">Galeria</a>
-                <div>
-                    <button onclick="toggleMobileSubmenu('mob-uslugi')" class="w-full text-left py-3 font-medium uppercase tracking-wide flex justify-between items-center border-b border-neutral-800">
-                        Usługi <span class="text-xs">▼</span>
-                    </button>
-                    <ul id="mob-uslugi" class="hidden pl-4 mt-2 space-y-3 py-2 text-sm text-neutral-400">
-                        <li><a href="#" class="block hover:text-amber-500">Branding na produkcie</a></li>
-                        <li><a href="#" class="block hover:text-amber-500">Serwis</a></li>
-                    </ul>
-                </div>
+                <a href="galeria.html" class="block py-3 font-medium uppercase tracking-wide border-b border-neutral-800">Galeria</a>
             </div>
         </div>
     </nav>
