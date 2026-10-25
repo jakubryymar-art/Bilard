@@ -4,7 +4,7 @@ const bazaProduktow = {
         nazwa: "Stół AS",
         kategoria: "pool",
         opis: "Profesjonalny stół bilardowy wykonany z wyselekcjonowanego drewna. Do każdego klienta podchodzimy w pełni indywidualnie...",
-        zdjecia: ["AS1.jpg", "AS2.jpg", "AS3.jpg", "AS4.jpg", "AS5.jpg"]
+        zdjecia: ["p1.png", "AS2.jpg", "AS3.jpg", "AS4.jpg", "AS5.jpg"]
     },
     
     // ID drugiego produktu
