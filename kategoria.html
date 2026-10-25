@@ -299,61 +299,20 @@
     <!-- Silnik Filtrowania i Stylowania (JavaScript) -->
     <!-- Silnik Filtrowania i Stylowania (JavaScript) - Wybór Pojedynczy -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const filtrZUrl = urlParams.get('filtr');
-
-            if (filtrZUrl) {
-                // Jeśli jest parametr, "kliknij" odpowiedni przycisk
-                const docelowyPrzycisk = document.querySelector(`.filtr-btn[value="${filtrZUrl}"]`);
-                if (docelowyPrzycisk) {
-                    wybierzKategorie(docelowyPrzycisk);
-                }
-            } else {
-                // Jeśli wchodzimy na ogólną stronę (bez parametrów), pokazujemy wszystko
-                // (Nie ma podświetlonego żadnego przycisku)
-                filtrujProdukty();
-            }
-        });
-
-        // Funkcja obsługująca wybór JEDNEJ kategorii
-        function wybierzKategorie(kliknietyBtn) {
-            
-            // 1. Zresetuj (zgaś) wszystkie przyciski
-            const wszystkiePrzyciski = document.querySelectorAll('.filtr-btn');
-            wszystkiePrzyciski.forEach(btn => {
-                btn.classList.remove('text-amber-500', 'font-bold', 'border-amber-500');
-                btn.classList.add('text-neutral-300', 'border-transparent');
-            });
-
-            // 2. Podświetl (zapal) tylko ten kliknięty
-            kliknietyBtn.classList.remove('text-neutral-300', 'border-transparent');
-            kliknietyBtn.classList.add('text-amber-500', 'font-bold', 'border-amber-500');
-
-            // 3. Zaktualizuj URL bez przeładowywania strony (aby link odpowiadał wybranej kategorii)
-            const nowaKategoria = kliknietyBtn.value;
-            const nowyURL = window.location.pathname + '?filtr=' + nowaKategoria;
-            window.history.pushState({path: nowyURL}, '', nowyURL);
-
-            // 4. Przefiltruj siatkę produktów
-            filtrujProdukty(nowaKategoria);
+        function zmienZdjecie(src) {
+            document.getElementById('main-image').src = src;
         }
 
-        // Funkcja ukrywająca/pokazująca produkty
-        function filtrujProdukty(wybranaKategoria = null) {
-            const produkty = document.querySelectorAll('.produkt-karta');
+        // Pokazuje/ukrywa główne menu mobilne
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
 
-            produkty.forEach(produkt => {
-                const kategoriaProduktu = produkt.getAttribute('data-kategoria');
-
-                // Pokaż wszystko (jeśli nie wybrano konkretnej kategorii)
-                // LUB pokaż tylko te, których atrybut 'data-kategoria' pasuje do wyboru
-                if (!wybranaKategoria || kategoriaProduktu === wybranaKategoria) {
-                    produkt.style.display = 'block';
-                } else {
-                    produkt.style.display = 'none';
-                }
-            });
+        // Pokazuje/ukrywa podkategorie w menu mobilnym
+        function toggleMobileSubmenu(id) {
+            const submenu = document.getElementById(id);
+            submenu.classList.toggle('hidden');
         }
     </script>
 </body>
