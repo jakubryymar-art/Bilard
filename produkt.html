@@ -44,6 +44,17 @@
                     <a href="dzierzawa.html" class="hover:text-amber-500 transition uppercase">Dzierżawa</a>
                     <a href="kontakt.html" class="hover:text-amber-500 transition uppercase">Kontakt</a>
                     <a href="galeria.html" class="hover:text-amber-500 transition uppercase">Galeria</a>
+
+                    <!-- Usługi -->
+                    <div class="relative group h-full flex items-center">
+                        <a href="#" class="hover:text-amber-500 transition flex items-center uppercase">Usługi <span class="ml-1 text-[10px]">▼</span></a>
+                        <div class="absolute top-20 right-0 w-56 bg-neutral-950 border border-neutral-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0">
+                            <ul class="py-3 text-neutral-100">
+                                <li><a href="#" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Branding na produkcie</a></li>
+                                <li><a href="#" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Serwis</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -63,7 +74,16 @@
                 <a href="#" class="block py-3 font-medium uppercase tracking-wide border-b border-neutral-800">Inne Produkty</a>
                 <a href="dzierzawa.html" class="block py-3 font-medium uppercase tracking-wide border-b border-neutral-800">Dzierżawa</a>
                 <a href="kontakt.html" class="block py-3 font-medium uppercase tracking-wide border-b border-neutral-800">Kontakt</a>
-                <a href="galeria.html" class="block py-3 font-medium uppercase tracking-wide border-b border-neutral-800">Galeria</a>
+                <a href="#" class="block py-3 font-medium uppercase tracking-wide border-b border-neutral-800">Galeria</a>
+                <div>
+                    <button onclick="toggleMobileSubmenu('mob-uslugi')" class="w-full text-left py-3 font-medium uppercase tracking-wide flex justify-between items-center border-b border-neutral-800">
+                        Usługi <span class="text-xs">▼</span>
+                    </button>
+                    <ul id="mob-uslugi" class="hidden pl-4 mt-2 space-y-3 py-2 text-sm text-neutral-400">
+                        <li><a href="#" class="block hover:text-amber-500">Branding na produkcie</a></li>
+                        <li><a href="#" class="block hover:text-amber-500">Serwis</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
