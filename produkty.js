@@ -12,7 +12,7 @@ const bazaProduktow = {
         nazwa: "Stół Aviator",
         kategoria: "pool",
         opis: "Niezwykły stół inspirowany lotnictwem. Unikalny design przypominający skrzydło samolotu...",
-        zdjecia: ["av1.jpg"]
+        zdjecia: ["p3.png"]
     }
     
     // Tutaj będziesz mógł dopisywać kolejne, kopiując ten schemat
