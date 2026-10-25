@@ -206,7 +206,19 @@
     <!-- Skrypt do galerii na stronie produktu -->
     <script>
         function zmienZdjecie(src) {
-            document.getElementById('glowne-zdjecie').src = src;
+            document.getElementById('main-image').src = src;
+        }
+
+        // Pokazuje/ukrywa główne menu mobilne
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Pokazuje/ukrywa podkategorie w menu mobilnym
+        function toggleMobileSubmenu(id) {
+            const submenu = document.getElementById(id);
+            submenu.classList.toggle('hidden');
         }
     </script>
 </body>
