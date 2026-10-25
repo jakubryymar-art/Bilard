@@ -10,9 +10,9 @@ const bazaProduktow = {
     // ID drugiego produktu
     "aviator": {
         nazwa: "Stół Aviator",
-        kategoria: "nowość",
+        kategoria: "#",
         opis: "Niezwykły stół inspirowany lotnictwem. Unikalny design przypominający skrzydło samolotu...",
-        zdjecia: ["av1.jpg", "av2.jpg", "av3.jpg", "av4.jpg", "av5.jpg"]
+        zdjecia: ["av1.jpg"]
     }
     
     // Tutaj będziesz mógł dopisywać kolejne, kopiując ten schemat
