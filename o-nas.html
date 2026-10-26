@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O nas - BILLKROS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased leading-relaxed">
+
+    <!-- NAWIGACJA (Skopiowana z uwzględnieniem zakładki O nas) -->
+    <nav class="bg-neutral-900 border-b border-neutral-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="text-3xl font-bold tracking-widest uppercase">Billkros<span class="text-amber-500">.</span></a>
+                
+                <button onclick="toggleMobileMenu()" class="lg:hidden text-3xl text-neutral-300 hover:text-amber-500 transition focus:outline-none">
+                    ☰
+                </button>
+
+                <div class="hidden lg:flex space-x-4 xl:space-x-6 text-sm font-medium tracking-wide h-full items-center">
+                    <!-- BILARD -->
+                    <div class="relative group h-full flex items-center">
+                        <a href="kategoria.html" class="hover:text-amber-500 transition flex items-center uppercase">Bilard <span class="ml-1 text-[10px]">▼</span></a>
+                        <div class="absolute top-20 left-0 w-56 bg-neutral-950 border border-neutral-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0">
+                            <ul class="py-3 text-neutral-100">
+                                <li><a href="kategoria.html?filtr=pool" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Stoły Pool</a></li>
+                                <li><a href="kategoria.html?filtr=snooker" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Stoły Snooker</a></li>
+                                <li><a href="kategoria.html?filtr=lampy" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Lampy bilardowe</a></li>
+                                <li><a href="kategoria.html?filtr=stojaki" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Stojaki bilardowe</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- PIŁKARZYKI -->
+                    <div class="relative group h-full flex items-center">
+                        <a href="#" class="hover:text-amber-500 transition flex items-center uppercase">Stół do piłkarzyków <span class="ml-1 text-[10px]">▼</span></a>
+                        <div class="absolute top-20 left-0 w-56 bg-neutral-950 border border-neutral-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0">
+                            <ul class="py-3 text-neutral-100">
+                                <li><a href="kategoria.html?filtr=pilkarzyki-rekreacyjne" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Rekreacyjne</a></li>
+                                <li><a href="kategoria.html?filtr=pilkarzyki-zarobkowe" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Zarobkowe</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- CYMBERGAJE -->
+                    <div class="relative group h-full flex items-center">
+                        <a href="#" class="hover:text-amber-500 transition flex items-center uppercase">Cymbergaje <span class="ml-1 text-[10px]">▼</span></a>
+                        <div class="absolute top-20 left-0 w-56 bg-neutral-950 border border-neutral-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0">
+                            <ul class="py-3 text-neutral-100">
+                                <li><a href="kategoria.html?filtr=cymbergaje-rekreacyjne" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Rekreacyjne</a></li>
+                                <li><a href="kategoria.html?filtr=cymbergaje-zarobkowe" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Zarobkowe</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- INNE -->
+                    <div class="relative group h-full flex items-center">
+                        <a href="#" class="hover:text-amber-500 transition flex items-center uppercase">Inne <span class="ml-1 text-[10px]">▼</span></a>
+                        <div class="absolute top-20 left-0 w-56 bg-neutral-950 border border-neutral-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0">
+                            <ul class="py-3 text-neutral-100">
+                                <li><a href="kategoria.html?filtr=blaty-drewniane" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Blaty drewniane</a></li>
+                                <li><a href="kategoria.html?filtr=stoliki-szachowe" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Stoliki szachowe</a></li>
+                                <li><a href="kategoria.html?filtr=akcesoria" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Akcesoria</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="o-nas.html" class="text-amber-500 transition uppercase">O nas</a>
+                    <a href="dzierzawa.html" class="hover:text-amber-500 transition uppercase">Dzierżawa</a>
+                    <a href="kontakt.html" class="hover:text-amber-500 transition uppercase">Kontakt</a>
+                    <a href="galeria.html" class="hover:text-amber-500 transition uppercase">Galeria</a>
+                </div>
+            </div>
+
+            <!-- MENU MOBILNE -->
+            <div id="mobile-menu" class="hidden lg:hidden pb-6 space-y-2">
+                <a href="o-nas.html" class="block py-3 font-medium uppercase tracking-wide border-b border-neutral-800 text-amber-500">O nas</a>
+                <!-- Pozostałe linki mobilne... -->
+                <a href="dzierzawa.html" class="block py-3 font-medium uppercase tracking-wide border-b border-neutral-800">Dzierżawa</a>
+                <a href="kontakt.html" class="block py-3 font-medium uppercase tracking-wide border-b border-neutral-800">Kontakt</a>
+                <a href="galeria.html" class="block py-3 font-medium uppercase tracking-wide border-b border-neutral-800">Galeria</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pasek ścieżki -->
+    <div class="bg-neutral-900 border-b border-neutral-800 py-4">
+        <div class="max-w-7xl mx-auto px-6 text-xs text-neutral-500 uppercase tracking-widest">
+            <a href="index.html" class="hover:text-amber-500 transition">Strona Główna</a> 
+            <span class="mx-2">/</span> 
+            <span class="text-neutral-300">O nas</span>
+        </div>
+    </div>
+
+    <!-- GŁÓWNA SEKCJA O NAS -->
+    <section class="max-w-7xl mx-auto px-6 py-16 md:py-24">
+        
+        <!-- Wstęp -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h1 class="text-4xl md:text-5xl font-light mb-6 uppercase tracking-widest">Tradycja i <span class="text-amber-500 font-bold">Pasja</span></h1>
+            <p class="text-neutral-400 text-lg">
+                Jesteśmy polską firmą rodzinną, prężnie działającą od 1985 roku. Powstaliśmy z zamiłowania do bilarda – i do dziś z powodzeniem podtrzymujemy tradycję tej pasjonującej gry, dostarczając sprzęt najwyższej jakości na terenie całego kraju.
+            </p>
+        </div>
+
+        <!-- MIEJSCE NA INTERAKTYWNY KAFELEK HISTORII -->
+        <div id="historia-interaktywna" class="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 md:p-12 mb-20 relative overflow-hidden group hover:border-amber-500 transition duration-500">
+            <!-- Tło deko -->
+            <div class="absolute -right-10 -top-10 text-9xl opacity-5">🎱</div>
+            
+            <h3 class="text-xl font-bold uppercase tracking-widest text-amber-500 mb-4">Historia Billkros</h3>
+            <p class="text-neutral-400 mb-8 max-w-2xl">
+                Tutaj w przyszłości zostanie zaimplementowany interaktywny moduł osi czasu (timeline), pokazujący krok po kroku rozwój firmy od 1985 roku, dodanie piłkarzyków i cymbergajów do oferty, aż po dzień dzisiejszy.
+            </p>
+            
+            <!-- Tymczasowy wizualny placeholder osi czasu -->
+            <div class="flex items-center space-x-4 opacity-50">
+                <div class="flex flex-col items-center">
+                    <div class="w-4 h-4 bg-amber-500 rounded-full"></div>
+                    <span class="text-xs font-bold mt-2">1985</span>
+                </div>
+                <div class="h-[2px] w-16 bg-neutral-700"></div>
+                <div class="flex flex-col items-center">
+                    <div class="w-4 h-4 bg-neutral-700 rounded-full"></div>
+                    <span class="text-xs mt-2 text-neutral-500">Rozwój</span>
+                </div>
+                <div class="h-[2px] w-16 bg-neutral-700"></div>
+                <div class="flex flex-col items-center">
+                    <div class="w-4 h-4 bg-neutral-700 rounded-full"></div>
+                    <span class="text-xs mt-2 text-neutral-500">Dziś</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producent, nie pośrednik -->
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+            <div>
+                <h2 class="text-2xl font-light uppercase tracking-widest mb-6">Jesteśmy producentem, <br><span class="font-bold text-amber-500">nie pośrednikiem!</span></h2>
+                <p class="text-neutral-400 mb-4">
+                    Zebrane przez ponad 35 lat doświadczenie w produkcji owocuje 100% zadowoleniem Klientów z zakupu naszych wyrobów. Fakt, że jesteśmy bezpośrednim producentem urządzeń rozrywkowo-zręcznościowych, daje Ci ogromną przewagę.
+                </p>
+                <p class="text-neutral-400">
+                    Dzięki temu serwis urządzeń oraz części zamienne są z pierwszej ręki i w zasięgu ręki. Każdy klient traktowany jest przez nas indywidualnie – potrafimy sprostać oczekiwaniom nawet tych najbardziej wymagających.
+                </p>
+            </div>
+            <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 border-l-4 border-l-amber-500 shadow-xl">
+                <h3 class="text-lg font-bold uppercase tracking-widest mb-4">Poza urządzeniami rozrywkowymi...</h3>
+                <p class="text-neutral-400 text-sm">
+                    W ofercie Billkros znajduje się także wysokiej jakości klejonka drewniana. Wykonujemy z niej trwałe trepy schodowe, eleganckie blaty drewniane oraz solidne parapety, dopasowane do indywidualnych potrzeb.
+                </p>
+            </div>
+        </div>
+
+        <!-- Nasz asortyment (Lista) -->
+        <div class="mb-20">
+            <h2 class="text-3xl font-light text-center uppercase tracking-widest mb-12">Nasza oferta urządzeń</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Karta 1 -->
+                <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-amber-500 transition">
+                    <h3 class="text-xl font-bold text-amber-500 mb-3">Stoły Bilardowe</h3>
+                    <p class="text-sm text-neutral-400 mb-4">Pool oraz Snooker. Tworzone z wysokiej jakości materiałów zapewniających stabilność. Dostępne w 4 rozmiarach (6FT, 7FT, 8FT, 9FT). Oferujemy zarówno wersje biznesowe, jak i ekskluzywne.</p>
+                    <ul class="text-xs text-neutral-500 list-disc list-inside">
+                        <li>Opcjonalne blaty jadalniane</li>
+                        <li>Pokrowce, lampy, stojaki</li>
+                    </ul>
+                </div>
+
+                <!-- Karta 2 -->
+                <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-amber-500 transition">
+                    <h3 class="text-xl font-bold text-amber-500 mb-3">Piłkarzyki</h3>
+                    <p class="text-sm text-neutral-400 mb-4">Stoły zarobkowe i rekreacyjne. W pełni dostosowywane do potrzeb klienta ze względu na przeznaczenie oraz ilość graczy.</p>
+                    <ul class="text-xs text-neutral-500 list-disc list-inside">
+                        <li>Pręty przelotowe lub teleskopowe</li>
+                        <li>Łożyska ślizgowe lub toczne</li>
+                    </ul>
+                </div>
+
+                <!-- Karta 3 -->
+                <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-amber-500 transition">
+                    <h3 class="text-xl font-bold text-amber-500 mb-3">Cymbergaje i Inne</h3>
+                    <p class="text-sm text-neutral-400 mb-4">Zarobkowe i rekreacyjne Air Hockeye (również z tablicami elektronicznymi) oraz stoliki szachowe dla miłośników logiki.</p>
+                    <ul class="text-xs text-neutral-500 list-disc list-inside">
+                        <li>Szachy do domu, ogrodu i parków</li>
+                        <li>Oklejanie urządzeń w grafikę reklamową</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dzierżawa / Wyróżnienia -->
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Dzierżawa -->
+            <div>
+                <h3 class="text-2xl font-light uppercase tracking-widest mb-4">Dzierżawa sprzętu</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+                    Jako dystrybutor oferujemy dzierżawę ponad 700 urządzeń przeznaczonych do rozrywki. Znajdziesz u nas m.in. darty, siłomierze, bujaki dla najmłodszych, symulatory, flippery czy maszyny do koszykówki. To doskonała okazja, by urozmaicić ofertę własnego biznesu lub kurortu.
+                </p>
+                <a href="dzierzawa.html" class="inline-block border border-amber-500 text-amber-500 px-6 py-3 text-sm font-bold uppercase tracking-widest hover:bg-amber-500 hover:text-neutral-950 transition">Sprawdź ofertę dzierżawy</a>
+            </div>
+
+            <!-- Certyfikaty -->
+            <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 relative overflow-hidden">
+                <div class="absolute right-0 top-0 opacity-10 text-8xl mt-4 mr-4">🏆</div>
+                <h3 class="text-lg font-bold uppercase tracking-widest text-amber-500 mb-4">Certyfikaty i wyróżnienia</h3>
+                <ul class="space-y-3 text-sm text-neutral-300">
+                    <li class="flex items-start">
+                        <span class="text-amber-500 mr-2">✔</span> 
+                        11-krotne wyróżnienie w Ogólnopolskim Konkursie Fair Play
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-amber-500 mr-2">✔</span> 
+                        Wpis do Złotej Księgi przedsiębiorstw Fair Play
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-amber-500 mr-2">✔</span> 
+                        4-krotny udział w Konkursie Podkarpackiej Nagrody Gospodarczej
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-amber-500 mr-2">✔</span> 
+                        Udział w konkursie Lider Biznesu Podkarpackiego Trójmiasta
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CTA / Kontakt -->
+    <section class="border-t border-neutral-800 bg-neutral-900 py-16 text-center">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-2xl font-light uppercase tracking-widest mb-4">Zainteresowany naszą ofertą?</h2>
+            <p class="text-neutral-400 mb-8">
+                Skontaktuj się z nami i podaruj sobie oraz swoim klientom niezapomniane godziny emocjonującej rozrywki.
+            </p>
+            <a href="kontakt.html" class="inline-block bg-amber-500 text-neutral-950 px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-amber-400 transition shadow-lg rounded">
+                Skontaktuj się z nami
+            </a>
+        </div>
+    </section>
+
+    <!-- SKRYPT MOBILNEGO MENU -->
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
