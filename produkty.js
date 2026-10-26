@@ -155,9 +155,9 @@ const bazaProduktow = {
         kategoria: "stoliki-szachowe",
         opis: "Ekskluzywny stolik wykonany z selekcjonowanego drewna egzotycznego.",
         zdjecia: ["szachy2.jpg"]
-    }
-    
     },
+    
+    
     "pokrowiec": {
         nazwa: "Pokrowiec na bilard",
         kategoria: "akcesoria",
