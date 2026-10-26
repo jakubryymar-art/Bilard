@@ -131,5 +131,5 @@ const bazaProduktow = {
         zdjecia: ["wariat.jpg"]
     },
     
-    }
+    
 };
