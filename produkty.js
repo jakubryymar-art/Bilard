@@ -5,7 +5,7 @@ const bazaProduktow = {
     "pool-1": {
         nazwa: "Stół Pool AS",
         kategoria: "pool",
-        opis: "",
+        opis: "Fajny stół",
         zdjecia: ["p1.png", "AS1.jpg", "AS2.jpg", "AS3.jpg", "AS4.jpg"]
     },
     "pool-2": {
@@ -80,94 +80,56 @@ const bazaProduktow = {
     // ==========================================
     // PIŁKARZYKI REKREACYJNE (3)
     // ==========================================
-    "pilkarzyki-rek-1": {
+    "pilkarzyki Mini": {
         nazwa: "Piłkarzyki Domowe Standard",
         kategoria: "pilkarzyki-rekreacyjne",
         opis: "Idealny stół do domowych rozgrywek z rodziną.",
-        zdjecia: ["pilk-rek1.jpg"]
+        zdjecia: ["mini.jpg"]
     },
-    "pilkarzyki-rek-2": {
+    "pilkarzyki Legia": {
         nazwa: "Piłkarzyki Składane",
         kategoria: "pilkarzyki-rekreacyjne",
         opis: "Praktyczny stół z możliwością pionowego złożenia po grze.",
-        zdjecia: ["pilk-rek2.jpg"]
+        zdjecia: ["legia.jpg"]
     },
-    "pilkarzyki-rek-3": {
-        nazwa: "Piłkarzyki Premium Home",
-        kategoria: "pilkarzyki-rekreacyjne",
-        opis: "Masywny stół do użytku domowego o wzmocnionej konstrukcji.",
-        zdjecia: ["pilk-rek3.jpg"]
-    },
-
+    
     // ==========================================
     // PIŁKARZYKI ZAROBKOWE (4)
     // ==========================================
-    "pilkarzyki-zar-1": {
+    "pilkarzyki polonia": {
         nazwa: "Piłkarzyki Zarobkowe z Szybą",
         kategoria: "pilkarzyki-zarobkowe",
         opis: "Stół wyposażony w hartowaną szybę i wrzutnik monet.",
-        zdjecia: ["pilk-zar1.jpg"]
+        zdjecia: ["polonia.jpg"]
     },
-    "pilkarzyki-zar-2": {
+    "pilkarzyki gigant": {
         nazwa: "Piłkarzyki Turniejowe Coin",
         kategoria: "pilkarzyki-zarobkowe",
         opis: "Stół spełniający wymogi turniejowe z elektronicznym wrzutnikiem.",
-        zdjecia: ["pilk-zar2.jpg"]
+        zdjecia: ["gigant.jpg"]
     },
-    "pilkarzyki-zar-3": {
-        nazwa: "Piłkarzyki Outdoor Zarobkowe",
-        kategoria: "pilkarzyki-zarobkowe",
-        opis: "Odporne na warunki atmosferyczne, idealne do ogródków letnich.",
-        zdjecia: ["pilk-zar3.jpg"]
-    },
-    "pilkarzyki-zar-4": {
-        nazwa: "Piłkarzyki XXL (6 graczy)",
-        kategoria: "pilkarzyki-zarobkowe",
-        opis: "Wydłużony stół przeznaczony do gry dla 6 osób naraz.",
-        zdjecia: ["pilk-zar4.jpg"]
-    },
+    
 
     // ==========================================
     // CYMBERGAJE ZAROBKOWE (3)
     // ==========================================
-    "cymbergaj-zar-1": {
+    "cymbergaj Kura": {
         nazwa: "Air Hockey Zarobkowy 8FT",
         kategoria: "cymbergaje-zarobkowe",
         opis: "Klasyczny, duży stół zarobkowy z mocnym nadmuchem i oświetleniem LED.",
-        zdjecia: ["cym-zar1.jpg"]
+        zdjecia: ["kura.jpg"]
     },
-    "cymbergaj-zar-2": {
-        nazwa: "Cymbergaj Wodoodporny",
-        kategoria: "cymbergaje-zarobkowe",
-        opis: "Urządzenie przystosowane do pracy na zewnątrz (outdoor).",
-        zdjecia: ["cym-zar2.jpg"]
-    },
-    "cymbergaj-zar-3": {
-        nazwa: "Cymbergaj dla Dzieci (Kids)",
-        kategoria: "cymbergaje-zarobkowe",
-        opis: "Niższy stół z kolorową grafiką i elektronicznym wyświetlaczem, stworzony dla najmłodszych.",
-        zdjecia: ["cym-zar3.jpg"]
-    },
+    
 
     // ==========================================
     // CYMBERGAJE REKREACYJNE (3)
     // ==========================================
-    "cymbergaj-rek-1": {
+    "cymbergaj Wariat": {
         nazwa: "Air Hockey Domowy 6FT",
         kategoria: "cymbergaje-rekreacyjne",
         opis: "Lekki stół do cymbergaja, idealny do pokoju gier w domu.",
-        zdjecia: ["cym-rek1.jpg"]
+        zdjecia: ["wariat.jpg"]
     },
-    "cymbergaj-rek-2": {
-        nazwa: "Cymbergaj Składany",
-        kategoria: "cymbergaje-rekreacyjne",
-        opis: "Kompaktowe urządzenie, które można łatwo złożyć po zakończonej zabawie.",
-        zdjecia: ["cym-rek2.jpg"]
-    },
-    "cymbergaj-rek-3": {
-        nazwa: "Air Hockey Premium Wood",
-        kategoria: "cymbergaje-rekreacyjne",
-        opis: "Elegancki cymbergaj wykończony w drewnie, pasujący do domowych wnętrz.",
-        zdjecia: ["cym-rek3.jpg"]
+    
     }
 };
