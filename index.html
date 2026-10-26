@@ -8,22 +8,23 @@
 </head>
 <body class="bg-neutral-950 text-neutral-100 font-sans antialiased">
 
-    <!-- NAWIGACJA -->
 <!-- GŁÓWNA NAWIGACJA -->
     <nav class="bg-neutral-900 border-b border-neutral-800 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="text-3xl font-bold tracking-widest uppercase">Billkros<span class="text-amber-500">.</span></a>
                 
+                <!-- Przycisk menu mobilnego -->
                 <button onclick="toggleMobileMenu()" class="lg:hidden text-3xl text-neutral-300 hover:text-amber-500 transition focus:outline-none">
                     ☰
                 </button>
 
+                <!-- Menu na komputery -->
                 <div class="hidden lg:flex space-x-4 xl:space-x-6 text-sm font-medium tracking-wide h-full items-center">
                     
                     <!-- BILARD -->
                     <div class="relative group h-full flex items-center">
-                        <span class="cursor-pointer hover:text-amber-500 transition flex items-center uppercase">Bilard <span class="ml-1 text-[10px]">▼</span></span>
+                        <a href="kategoria.html?filtr=bilard" class="hover:text-amber-500 transition flex items-center uppercase">Bilard <span class="ml-1 text-[10px]">▼</span></a>
                         <div class="absolute top-20 left-0 w-56 bg-neutral-950 border border-neutral-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0">
                             <ul class="py-3 text-neutral-100">
                                 <li><a href="kategoria.html?filtr=pool" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Stoły Pool</a></li>
@@ -36,7 +37,7 @@
                     
                     <!-- PIŁKARZYKI -->
                     <div class="relative group h-full flex items-center">
-                        <span class="cursor-pointer hover:text-amber-500 transition flex items-center uppercase">Stół do piłkarzyków <span class="ml-1 text-[10px]">▼</span></span>
+                        <a href="kategoria.html?filtr=pilkarzyki" class="hover:text-amber-500 transition flex items-center uppercase">Stół do piłkarzyków <span class="ml-1 text-[10px]">▼</span></a>
                         <div class="absolute top-20 left-0 w-56 bg-neutral-950 border border-neutral-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0">
                             <ul class="py-3 text-neutral-100">
                                 <li><a href="kategoria.html?filtr=pilkarzyki-rekreacyjne" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Rekreacyjne</a></li>
@@ -47,7 +48,7 @@
                     
                     <!-- CYMBERGAJE -->
                     <div class="relative group h-full flex items-center">
-                        <span class="cursor-pointer hover:text-amber-500 transition flex items-center uppercase">Cymbergaje <span class="ml-1 text-[10px]">▼</span></span>
+                        <a href="kategoria.html?filtr=cymbergaje" class="hover:text-amber-500 transition flex items-center uppercase">Cymbergaje <span class="ml-1 text-[10px]">▼</span></a>
                         <div class="absolute top-20 left-0 w-56 bg-neutral-950 border border-neutral-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0">
                             <ul class="py-3 text-neutral-100">
                                 <li><a href="kategoria.html?filtr=cymbergaje-rekreacyjne" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Rekreacyjne</a></li>
@@ -58,7 +59,7 @@
                     
                     <!-- INNE -->
                     <div class="relative group h-full flex items-center">
-                        <span class="cursor-pointer hover:text-amber-500 transition flex items-center uppercase">Inne <span class="ml-1 text-[10px]">▼</span></span>
+                        <a href="kategoria.html?filtr=inne" class="hover:text-amber-500 transition flex items-center uppercase">Inne <span class="ml-1 text-[10px]">▼</span></a>
                         <div class="absolute top-20 left-0 w-56 bg-neutral-950 border border-neutral-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0">
                             <ul class="py-3 text-neutral-100">
                                 <li><a href="kategoria.html?filtr=blaty-drewniane" class="block px-6 py-2 hover:text-amber-500 hover:bg-neutral-900 transition">Blaty drewniane</a></li>
@@ -75,7 +76,7 @@
                 </div>
             </div>
 
-            <!-- MENU MOBILNE -->
+            <!-- Menu Mobilne -->
             <div id="mobile-menu" class="hidden lg:hidden pb-6 space-y-2">
                 <div>
                     <button onclick="toggleMobileSubmenu('mob-bilard')" class="w-full text-left py-3 font-medium uppercase tracking-wide flex justify-between items-center border-b border-neutral-800 text-neutral-100 hover:text-amber-500">
