@@ -5,11 +5,7 @@ const bazaProduktow = {
     "pool-1": {
         nazwa: "Stół Pool AS",
         kategoria: "pool",
-        opis: "Bilard należący do grupy stołów ekskluzywnych. Idealnie nadaje się do aranżacji miejsc o wysokim standardzie. Łatwo komponuje się z wnętrzem stylowym, jak i nowoczesnym. Przystępna cena sprawia, że tego typu stoły bilardowe, to nie tylko przywilej przeznaczony dla nielicznych. Bilard As zyskał szczególne uznanie wśród Klientów indywidualnych do użytku domowego oraz klientów biznesowych, jako doskonałe uzupełnienie oferty swojej działalności (hotele, domy wczasowe, ośrodki wypoczynkowe).
-
-Bilard dostępny w czterech rozmiarach: 6FT, 7FT, 8FT oraz 9FT. Stoły od 6FT – 8FT mają 4 nogi, stół 9FT ma 6 nóg. Stół bilardowy koszykowy wykonany z rodzimych gatunków litego, twardego drewna jesionowego lub dębowego. Dlatego urzeka niepowtarzalnym usłojeniem, kolorystyką oraz tworzy unikalny klimat ciepła w każdym pomieszczeniu. Drewno możemy zabarwić na kilkanaście kolorów do wyboru. Koszyki skórzane. Łuzy gumowe. Drewniana rama stołu, ważny element w grze, ma niepowtarzalną, półokrągłą, wyprofilowaną linię. Pole gry – „serce stołu” – profesjonalna płyta kamienna „łupek włoski” lub dla oszczędnych – płyta meblowa (maksymalnie do rozmiaru 8ft). Sukno w kilku kolorach, markach i gramaturach do wyboru. W cenie stołu zawarty jest podstawowy zestaw akcesoriów do bilarda.
-
-Dodatkowym atutem stołu bilardowego jest możliwość wyposażenia w blat konferencyjno-biesiadny (z płyty meblowej, szklany lub fornirowany), blat do ping – ponga oraz schowek na blaty. Jako producent stołów bilardowych mamy możliwość wykonania bilardów według indywidualnych wymagań Klienta.",
+        opis: "k",
         zdjecia: ["p1.png", "AS1.jpg", "AS2.jpg", "AS3.jpg", "AS4.jpg"]
     },
     "pool-2": {
