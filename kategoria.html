@@ -165,13 +165,8 @@
 
     <!-- BAZA DANYCH -->
 <script>
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
-
-        function toggleMobileSubmenu(id) {
-            document.getElementById(id).classList.toggle('hidden');
-        }
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
+        function toggleMobileSubmenu(id) { document.getElementById(id).classList.toggle('hidden'); }
 
         const urlParams = new URLSearchParams(window.location.search);
         const aktywnyFiltr = urlParams.get('filtr');
@@ -180,7 +175,6 @@
         const tytulKategorii = document.getElementById('tytul-kategorii');
         const menuFiltrow = document.getElementById('menu-filtrow');
 
-        // DEFINICJA GRUP KATEGORII
         const grupyKategorii = {
             'bilard': ['pool', 'snooker', 'lampy', 'stojaki'],
             'pilkarzyki': ['pilkarzyki-rekreacyjne', 'pilkarzyki-zarobkowe'],
@@ -188,7 +182,6 @@
             'inne': ['blaty-drewniane', 'stoliki-szachowe', 'akcesoria']
         };
 
-        // DEFINICJA MENU BOCZNEGO DLA KAŻDEJ GRUPY
         const definicjeMenu = {
             'bilard': [
                 { id: 'pool', nazwa: 'Stoły Pool' },
@@ -211,25 +204,19 @@
             ]
         };
 
-        // USTALANIE GŁÓWNEJ GRUPY (by wiedzieć, jakie menu boczne wyświetlić)
-        let aktywnaGrupa = 'bilard'; // Domyślnie bilard
+        let aktywnaGrupa = 'bilard'; 
         if (aktywnyFiltr) {
             if (grupyKategorii[aktywnyFiltr]) {
-                aktywnaGrupa = aktywnyFiltr; // Jeśli kliknięto grupę (np. 'pilkarzyki')
+                aktywnaGrupa = aktywnyFiltr; 
             } else {
-                // Jeśli kliknięto podkategorię (np. 'pool'), szukamy jej w grupach
                 for (const [grupa, podkategorie] of Object.entries(grupyKategorii)) {
-                    if (podkategorie.includes(aktywnyFiltr)) {
-                        aktywnaGrupa = grupa;
-                        break;
-                    }
+                    if (podkategorie.includes(aktywnyFiltr)) { aktywnaGrupa = grupa; break; }
                 }
             }
         }
 
-        // GENEROWANIE MENU BOCZNEGO
         if (menuFiltrow && definicjeMenu[aktywnaGrupa]) {
-            menuFiltrow.innerHTML = ''; // Czyścimy stare menu
+            menuFiltrow.innerHTML = ''; 
             definicjeMenu[aktywnaGrupa].forEach(pozycja => {
                 const li = document.createElement('li');
                 li.innerHTML = `<a href="kategoria.html?filtr=${pozycja.id}" class="block hover:text-amber-500 transition text-neutral-400">${pozycja.nazwa}</a>`;
@@ -237,57 +224,54 @@
             });
         }
 
-        // Zmiana tytułu zależnie od filtra
         if (aktywnyFiltr) {
-            // Zamiana myślników na spacje dla ładniejszego tytułu
             tytulKategorii.innerText = aktywnyFiltr.replace(/-/g, ' ').toUpperCase();
+        } else {
+            tytulKategorii.innerText = "WSZYSTKIE PRODUKTY";
         }
 
         let znalezionoProdukty = false;
-
-        // Generowanie kafelków
-        for (const [id, produkt] of Object.entries(bazaProduktow)) {
-            
-            if (aktywnyFiltr) {
-                if (grupyKategorii[aktywnyFiltr]) {
-                    if (!grupyKategorii[aktywnyFiltr].includes(produkt.kategoria)) continue;
-                } 
-                else {
-                    if (produkt.kategoria !== aktywnyFiltr) continue;
+        
+        if (typeof bazaProduktow !== 'undefined') {
+            for (const [id, produkt] of Object.entries(bazaProduktow)) {
+                if (aktywnyFiltr) {
+                    if (grupyKategorii[aktywnyFiltr]) {
+                        if (!grupyKategorii[aktywnyFiltr].includes(produkt.kategoria)) continue;
+                    } else {
+                        if (produkt.kategoria !== aktywnyFiltr) continue;
+                    }
                 }
+                
+                znalezionoProdukty = true;
+                const glowneZdjecie = (produkt.zdjecia && produkt.zdjecia.length > 0) ? produkt.zdjecia[0] : '';
+                
+                const kafelek = document.createElement('a');
+                kafelek.href = `produkt.html?id=${id}`;
+                kafelek.className = "group block bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden hover:border-amber-500 transition duration-300 shadow-xl";
+                
+                kafelek.innerHTML = `
+                    <div class="h-56 bg-white flex items-center justify-center p-4 border-b border-neutral-800">
+                        <img src="${glowneZdjecie}" alt="${produkt.nazwa}" class="max-h-full max-w-full object-contain group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-lg font-bold tracking-wider uppercase mb-3 text-neutral-100 group-hover:text-amber-500 transition">${produkt.nazwa}</h3>
+                        <span class="inline-block border border-amber-500 text-amber-500 px-6 py-2 text-xs uppercase tracking-widest font-bold group-hover:bg-amber-500 group-hover:text-neutral-950 transition">Konfiguruj</span>
+                    </div>
+                `;
+                kontener.appendChild(kafelek);
             }
-            
-            znalezionoProdukty = true;
-            const glowneZdjecie = (produkt.zdjecia && produkt.zdjecia.length > 0) ? produkt.zdjecia[0] : '';
-            
-            const kafelek = document.createElement('a');
-            kafelek.href = `produkt.html?id=${id}`;
-            kafelek.className = "group block bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden hover:border-amber-500 transition duration-300 shadow-xl";
-            
-            kafelek.innerHTML = `
-                <div class="h-56 bg-white flex items-center justify-center p-4 border-b border-neutral-800">
-                    <img src="${glowneZdjecie}" alt="${produkt.nazwa}" class="max-h-full max-w-full object-contain group-hover:scale-105 transition duration-500">
-                </div>
-                <div class="p-6 text-center">
-                    <h3 class="text-lg font-bold tracking-wider uppercase mb-3 text-neutral-100 group-hover:text-amber-500 transition">${produkt.nazwa}</h3>
-                    <span class="inline-block border border-amber-500 text-amber-500 px-6 py-2 text-xs uppercase tracking-widest font-bold group-hover:bg-amber-500 group-hover:text-neutral-950 transition">Konfiguruj</span>
-                </div>
-            `;
-            kontener.appendChild(kafelek);
         }
 
         if (!znalezionoProdukty) {
             kontener.innerHTML = `<p class="text-neutral-500">Brak produktów w tej kategorii. Dodaj je w pliku produkty.js przypisując im odpowiednią kategorię.</p>`;
         }
 
-        // PODŚWIETLANIE AKTYWNEGO FILTRA Z KRESKĄ
         const linkiFiltrow = document.querySelectorAll('#menu-filtrow a');
         if (aktywnyFiltr) {
             linkiFiltrow.forEach(link => {
                 if (link.getAttribute('href').includes('filtr=' + aktywnyFiltr)) {
                     link.classList.add('border-l-2', 'border-amber-500', 'pl-3', 'text-neutral-100', 'font-bold');
                     link.classList.remove('hover:text-amber-500', 'text-neutral-400');
-                    // Kliknięcie w aktywny link przeniesie do kategorii głównej danej grupy
                     link.setAttribute('href', `kategoria.html?filtr=${aktywnaGrupa}`);
                 }
             });
