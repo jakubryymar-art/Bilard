@@ -131,5 +131,29 @@ const bazaProduktow = {
         zdjecia: ["wariat.jpg"]
     },
     
-    
+    // ==========================================
+    // BLATY DREWNIANE (1)
+    // ==========================================
+    "blat-1": {
+        nazwa: "Blat Drewniany Biesiadny",
+        kategoria: "blaty-drewniane",
+        opis: "Solidny blat nakładany na stół bilardowy, zmieniający go w stół jadalny lub konferencyjny.",
+        zdjecia: ["blat1.jpg"]
+    },
+
+    // ==========================================
+    // STOLIKI SZACHOWE (2)
+    // ==========================================
+    "szachy-1": {
+        nazwa: "Stoliki Szachowe Klasyczne",
+        kategoria: "stoliki-szachowe",
+        opis: "Elegancki stolik z wygrawerowaną szachownicą i szufladami na bierki.",
+        zdjecia: ["szachy1.jpg"]
+    },
+    "szachy-2": {
+        nazwa: "Stolik Szachowy Premium",
+        kategoria: "stoliki-szachowe",
+        opis: "Ekskluzywny stolik wykonany z selekcjonowanego drewna egzotycznego.",
+        zdjecia: ["szachy2.jpg"]
+    }
 };
