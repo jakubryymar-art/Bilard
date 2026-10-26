@@ -175,6 +175,7 @@
         const tytulKategorii = document.getElementById('tytul-kategorii');
         const menuFiltrow = document.getElementById('menu-filtrow');
 
+        // DEFINICJE
         const grupyKategorii = {
             'bilard': ['pool', 'snooker', 'lampy', 'stojaki'],
             'pilkarzyki': ['pilkarzyki-rekreacyjne', 'pilkarzyki-zarobkowe'],
@@ -204,6 +205,7 @@
             ]
         };
 
+        // SZUKANIE GRUPY
         let aktywnaGrupa = 'bilard'; 
         if (aktywnyFiltr) {
             if (grupyKategorii[aktywnyFiltr]) {
@@ -215,6 +217,7 @@
             }
         }
 
+        // GENEROWANIE MENU
         if (menuFiltrow && definicjeMenu[aktywnaGrupa]) {
             menuFiltrow.innerHTML = ''; 
             definicjeMenu[aktywnaGrupa].forEach(pozycja => {
@@ -224,23 +227,32 @@
             });
         }
 
+        // TYTUŁ
         if (aktywnyFiltr) {
             tytulKategorii.innerText = aktywnyFiltr.replace(/-/g, ' ').toUpperCase();
         } else {
             tytulKategorii.innerText = "WSZYSTKIE PRODUKTY";
         }
 
+        // ŁADOWANIE KAFELKÓW
         let znalezionoProdukty = false;
         
-        if (typeof bazaProduktow !== 'undefined') {
+        try {
             for (const [id, produkt] of Object.entries(bazaProduktow)) {
-                if (aktywnyFiltr) {
-                    if (grupyKategorii[aktywnyFiltr]) {
-                        if (!grupyKategorii[aktywnyFiltr].includes(produkt.kategoria)) continue;
-                    } else {
-                        if (produkt.kategoria !== aktywnyFiltr) continue;
-                    }
+                let czyPokazac = false;
+                
+                // Kuloodporna logika sortowania
+                if (!aktywnyFiltr) {
+                    czyPokazac = true; 
+                } else if (grupyKategorii[aktywnyFiltr]) {
+                    // Kliknięto główną kategorię
+                    if (grupyKategorii[aktywnyFiltr].includes(produkt.kategoria)) czyPokazac = true;
+                } else {
+                    // Kliknięto dokładną podkategorię
+                    if (produkt.kategoria === aktywnyFiltr) czyPokazac = true;
                 }
+
+                if (!czyPokazac) continue;
                 
                 znalezionoProdukty = true;
                 const glowneZdjecie = (produkt.zdjecia && produkt.zdjecia.length > 0) ? produkt.zdjecia[0] : '';
@@ -260,16 +272,23 @@
                 `;
                 kontener.appendChild(kafelek);
             }
+        } catch (error) {
+            console.error("Błąd w pliku produkty.js: ", error);
         }
 
         if (!znalezionoProdukty) {
-            kontener.innerHTML = `<p class="text-neutral-500">Brak produktów w tej kategorii. Dodaj je w pliku produkty.js przypisując im odpowiednią kategorię.</p>`;
+            kontener.innerHTML = `<p class="text-neutral-500">Brak produktów. Upewnij się, że nazwy kategorii w <b>produkty.js</b> dokładnie pasują (są z małych liter i bez spacji).</p>`;
         }
 
+        // NAPRAWIONE PODŚWIETLANIE AKTYWNEGO FILTRA
         const linkiFiltrow = document.querySelectorAll('#menu-filtrow a');
         if (aktywnyFiltr) {
             linkiFiltrow.forEach(link => {
-                if (link.getAttribute('href').includes('filtr=' + aktywnyFiltr)) {
+                const urlLinku = link.getAttribute('href');
+                const filtrZLinku = urlLinku.split('filtr=')[1];
+                
+                // Używamy === dla DOKŁADNEGO dopasowania, by nie zaznaczało wielu naraz
+                if (filtrZLinku === aktywnyFiltr) {
                     link.classList.add('border-l-2', 'border-amber-500', 'pl-3', 'text-neutral-100', 'font-bold');
                     link.classList.remove('hover:text-amber-500', 'text-neutral-400');
                     link.setAttribute('href', `kategoria.html?filtr=${aktywnaGrupa}`);
