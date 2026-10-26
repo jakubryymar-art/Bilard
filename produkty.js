@@ -80,13 +80,13 @@ const bazaProduktow = {
     // ==========================================
     // PIŁKARZYKI REKREACYJNE (3)
     // ==========================================
-    "pilkarzyki Mini": {
+    "pilkarzyki-rekreacyjne Mini": {
         nazwa: "Piłkarzyki Domowe Standard",
         kategoria: "pilkarzyki-rekreacyjne",
         opis: "Idealny stół do domowych rozgrywek z rodziną.",
         zdjecia: ["mini.jpg"]
     },
-    "pilkarzyki Legia": {
+    "pilkarzyki-rekreacyjne Legia": {
         nazwa: "Piłkarzyki Składane",
         kategoria: "pilkarzyki-rekreacyjne",
         opis: "Praktyczny stół z możliwością pionowego złożenia po grze.",
@@ -96,13 +96,13 @@ const bazaProduktow = {
     // ==========================================
     // PIŁKARZYKI ZAROBKOWE (4)
     // ==========================================
-    "pilkarzyki polonia": {
+    "pilkarzyki-zarobkowe polonia": {
         nazwa: "Piłkarzyki Zarobkowe z Szybą",
         kategoria: "pilkarzyki-zarobkowe",
         opis: "Stół wyposażony w hartowaną szybę i wrzutnik monet.",
         zdjecia: ["polonia.jpg"]
     },
-    "pilkarzyki gigant": {
+    "pilkarzyki-zarobkowe gigant": {
         nazwa: "Piłkarzyki Turniejowe Coin",
         kategoria: "pilkarzyki-zarobkowe",
         opis: "Stół spełniający wymogi turniejowe z elektronicznym wrzutnikiem.",
@@ -113,7 +113,7 @@ const bazaProduktow = {
     // ==========================================
     // CYMBERGAJE ZAROBKOWE (3)
     // ==========================================
-    "cymbergaj Kura": {
+    "cymbergaje-zarobkowe Kura": {
         nazwa: "Air Hockey Zarobkowy 8FT",
         kategoria: "cymbergaje-zarobkowe",
         opis: "Klasyczny, duży stół zarobkowy z mocnym nadmuchem i oświetleniem LED.",
@@ -124,7 +124,7 @@ const bazaProduktow = {
     // ==========================================
     // CYMBERGAJE REKREACYJNE (3)
     // ==========================================
-    "cymbergaj Wariat": {
+    "cymbergaje-rekreacyjne Wariat": {
         nazwa: "Air Hockey Domowy 6FT",
         kategoria: "cymbergaje-rekreacyjne",
         opis: "Lekki stół do cymbergaja, idealny do pokoju gier w domu.",
