@@ -139,13 +139,12 @@
             <!-- LEWA KOLUMNA: FILTRY -->
             <div class="w-full lg:w-1/4">
                 <h3 class="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-6 border-b border-neutral-800 pb-4">Kategoria Produktów</h3>
-                <ul class="space-y-4 text-sm text-neutral-400">
-                    <li><a href="kategoria.html?filtr=pool" class="hover:text-amber-500 transition">Stoły Pool</a></li>
-                    <li><a href="kategoria.html?filtr=snooker" class="hover:text-amber-500 transition">Stoły Snooker</a></li>
-                    <li><a href="kategoria.html?filtr=blaty" class="hover:text-amber-500 transition">Blaty do bilardów</a></li>
-                    <li><a href="kategoria.html?filtr=lampy" class="hover:text-amber-500 transition">Lampy bilardowe</a></li>
-                    <li><a href="kategoria.html?filtr=stojaki" class="hover:text-amber-500 transition">Stojaki bilardowe</a></li>
-                </ul>
+                <ul id="menu-filtrow" class="space-y-4 text-sm text-neutral-400">
+    <li><a href="kategoria.html?filtr=pool" class="hover:text-amber-500 transition">Stoły Pool</a></li>
+    <li><a href="kategoria.html?filtr=snooker" class="hover:text-amber-500 transition">Stoły Snooker</a></li>
+    <li><a href="kategoria.html?filtr=lampy" class="hover:text-amber-500 transition">Lampy bilardowe</a></li>
+    <li><a href="kategoria.html?filtr=stojaki" class="hover:text-amber-500 transition">Stojaki bilardowe</a></li>
+</ul>
             </div>
 
             <!-- PRAWA KOLUMNA: PRODUKTY -->
@@ -168,8 +167,24 @@
     <script>
         function toggleMobileMenu() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
+        // Podświetlanie aktywnego filtra i opcja jego wyłączenia
+const linkiFiltrow = document.querySelectorAll('#menu-filtrow a');
 
+linkiFiltrow.forEach(link => {
+    // Pobieramy parametr 'filtr' z każdego linku w menu
+    const urlLinku = new URL(link.href, window.location.origin);
+    const kategoriaLinku = urlLinku.searchParams.get('filtr');
+
+    // Jeśli link w menu zgadza się z kategorią, w której obecnie jesteśmy:
+    if (kategoriaLinku === aktywnyFiltr) {
+        // 1. Podświetlamy na pomarańczowo i pogrubiamy
+        link.classList.add('text-amber-500', 'font-bold');
+        
+        // 2. Podmieniamy adres, żeby ponowne kliknięcie usunęło filtr
+        link.href = 'kategoria.html';
+    }
+});
+}
         // Pobieramy filtr z paska adresu (np. ?filtr=pool)
         const urlParams = new URLSearchParams(window.location.search);
         const aktywnyFiltr = urlParams.get('filtr');
