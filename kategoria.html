@@ -164,9 +164,6 @@
     </section>
 
     <!-- BAZA DANYCH -->
-<script src="produkty.js"></script>
-
-    <!-- SKRYPT GŁÓWNY -->
 <script>
         function toggleMobileMenu() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
@@ -181,6 +178,7 @@
 
         const kontener = document.getElementById('katalog-produktow');
         const tytulKategorii = document.getElementById('tytul-kategorii');
+        const menuFiltrow = document.getElementById('menu-filtrow');
 
         // DEFINICJA GRUP KATEGORII
         const grupyKategorii = {
@@ -190,9 +188,59 @@
             'inne': ['blaty-drewniane', 'stoliki-szachowe', 'akcesoria']
         };
 
+        // DEFINICJA MENU BOCZNEGO DLA KAŻDEJ GRUPY
+        const definicjeMenu = {
+            'bilard': [
+                { id: 'pool', nazwa: 'Stoły Pool' },
+                { id: 'snooker', nazwa: 'Stoły Snooker' },
+                { id: 'lampy', nazwa: 'Lampy bilardowe' },
+                { id: 'stojaki', nazwa: 'Stojaki bilardowe' }
+            ],
+            'pilkarzyki': [
+                { id: 'pilkarzyki-rekreacyjne', nazwa: 'Rekreacyjne' },
+                { id: 'pilkarzyki-zarobkowe', nazwa: 'Zarobkowe' }
+            ],
+            'cymbergaje': [
+                { id: 'cymbergaje-rekreacyjne', nazwa: 'Rekreacyjne' },
+                { id: 'cymbergaje-zarobkowe', nazwa: 'Zarobkowe' }
+            ],
+            'inne': [
+                { id: 'blaty-drewniane', nazwa: 'Blaty drewniane' },
+                { id: 'stoliki-szachowe', nazwa: 'Stoliki szachowe' },
+                { id: 'akcesoria', nazwa: 'Akcesoria' }
+            ]
+        };
+
+        // USTALANIE GŁÓWNEJ GRUPY (by wiedzieć, jakie menu boczne wyświetlić)
+        let aktywnaGrupa = 'bilard'; // Domyślnie bilard
+        if (aktywnyFiltr) {
+            if (grupyKategorii[aktywnyFiltr]) {
+                aktywnaGrupa = aktywnyFiltr; // Jeśli kliknięto grupę (np. 'pilkarzyki')
+            } else {
+                // Jeśli kliknięto podkategorię (np. 'pool'), szukamy jej w grupach
+                for (const [grupa, podkategorie] of Object.entries(grupyKategorii)) {
+                    if (podkategorie.includes(aktywnyFiltr)) {
+                        aktywnaGrupa = grupa;
+                        break;
+                    }
+                }
+            }
+        }
+
+        // GENEROWANIE MENU BOCZNEGO
+        if (menuFiltrow && definicjeMenu[aktywnaGrupa]) {
+            menuFiltrow.innerHTML = ''; // Czyścimy stare menu
+            definicjeMenu[aktywnaGrupa].forEach(pozycja => {
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="kategoria.html?filtr=${pozycja.id}" class="block hover:text-amber-500 transition text-neutral-400">${pozycja.nazwa}</a>`;
+                menuFiltrow.appendChild(li);
+            });
+        }
+
         // Zmiana tytułu zależnie od filtra
         if (aktywnyFiltr) {
-            tytulKategorii.innerText = aktywnyFiltr.toUpperCase();
+            // Zamiana myślników na spacje dla ładniejszego tytułu
+            tytulKategorii.innerText = aktywnyFiltr.replace(/-/g, ' ').toUpperCase();
         }
 
         let znalezionoProdukty = false;
@@ -201,11 +249,9 @@
         for (const [id, produkt] of Object.entries(bazaProduktow)) {
             
             if (aktywnyFiltr) {
-                // Jeśli kliknięto w kategorię główną (np. 'bilard')
                 if (grupyKategorii[aktywnyFiltr]) {
                     if (!grupyKategorii[aktywnyFiltr].includes(produkt.kategoria)) continue;
                 } 
-                // Jeśli kliknięto w podkategorię (np. 'pool')
                 else {
                     if (produkt.kategoria !== aktywnyFiltr) continue;
                 }
@@ -239,9 +285,10 @@
         if (aktywnyFiltr) {
             linkiFiltrow.forEach(link => {
                 if (link.getAttribute('href').includes('filtr=' + aktywnyFiltr)) {
-                    link.classList.add('block', 'border-l-2', 'border-amber-500', 'pl-3', 'text-neutral-100', 'font-bold');
+                    link.classList.add('border-l-2', 'border-amber-500', 'pl-3', 'text-neutral-100', 'font-bold');
                     link.classList.remove('hover:text-amber-500', 'text-neutral-400');
-                    link.setAttribute('href', 'kategoria.html');
+                    // Kliknięcie w aktywny link przeniesie do kategorii głównej danej grupy
+                    link.setAttribute('href', `kategoria.html?filtr=${aktywnaGrupa}`);
                 }
             });
         }
