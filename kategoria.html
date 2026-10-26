@@ -161,31 +161,18 @@
     </section>
 
     <!-- BAZA DANYCH -->
-    <script src="produkty.js"></script>
+<script src="produkty.js"></script>
 
-    <!-- SKRYPT GENERUJĄCY KAFELKI I FILTRUJĄCY -->
+    <!-- SKRYPT GŁÓWNY -->
     <script>
         function toggleMobileMenu() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
-        // Podświetlanie aktywnego filtra i opcja jego wyłączenia
-const linkiFiltrow = document.querySelectorAll('#menu-filtrow a');
+        }
 
-linkiFiltrow.forEach(link => {
-    // Pobieramy parametr 'filtr' z każdego linku w menu
-    const urlLinku = new URL(link.href, window.location.origin);
-    const kategoriaLinku = urlLinku.searchParams.get('filtr');
+        function toggleMobileSubmenu(id) {
+            document.getElementById(id).classList.toggle('hidden');
+        }
 
-    // Jeśli link w menu zgadza się z kategorią, w której obecnie jesteśmy:
-    if (kategoriaLinku === aktywnyFiltr) {
-        // 1. Podświetlamy na pomarańczowo i pogrubiamy
-        link.classList.add('text-amber-500', 'font-bold');
-        
-        // 2. Podmieniamy adres, żeby ponowne kliknięcie usunęło filtr
-        link.href = 'kategoria.html';
-    }
-});
-}
-        // Pobieramy filtr z paska adresu (np. ?filtr=pool)
         const urlParams = new URLSearchParams(window.location.search);
         const aktywnyFiltr = urlParams.get('filtr');
 
@@ -193,30 +180,23 @@ linkiFiltrow.forEach(link => {
         const tytulKategorii = document.getElementById('tytul-kategorii');
 
         // Zmiana tytułu zależnie od filtra
-        // Zmiana tytułu zależnie od filtra
         if (aktywnyFiltr) {
             tytulKategorii.innerText = aktywnyFiltr.toUpperCase();
         }
 
         let znalezionoProdukty = false;
 
-        // Pętla po bazie danych
+        // Generowanie kafelków
         for (const [id, produkt] of Object.entries(bazaProduktow)) {
+            if (aktywnyFiltr && produkt.kategoria !== aktywnyFiltr) continue;
             
-            // Jeśli użytkownik kliknął w konkretny filtr, pomijamy produkty z innej kategorii
-            if (aktywnyFiltr && produkt.kategoria !== aktywnyFiltr) {
-                continue;
-            }
-
             znalezionoProdukty = true;
-
+            const glowneZdjecie = (produkt.zdjecia && produkt.zdjecia.length > 0) ? produkt.zdjecia[0] : '';
+            
             const kafelek = document.createElement('a');
             kafelek.href = `produkt.html?id=${id}`;
             kafelek.className = "group block bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden hover:border-amber-500 transition duration-300 shadow-xl";
-
-            // Upewniamy się, że produkt ma zdjęcie
-            const glowneZdjecie = (produkt.zdjecia && produkt.zdjecia.length > 0) ? produkt.zdjecia[0] : '';
-
+            
             kafelek.innerHTML = `
                 <div class="h-56 bg-white flex items-center justify-center p-4 border-b border-neutral-800">
                     <img src="${glowneZdjecie}" alt="${produkt.nazwa}" class="max-h-full max-w-full object-contain group-hover:scale-105 transition duration-500">
@@ -226,13 +206,27 @@ linkiFiltrow.forEach(link => {
                     <span class="inline-block border border-amber-500 text-amber-500 px-6 py-2 text-xs uppercase tracking-widest font-bold group-hover:bg-amber-500 group-hover:text-neutral-950 transition">Konfiguruj</span>
                 </div>
             `;
-
             kontener.appendChild(kafelek);
         }
 
-        // Komunikat, gdy kategoria jest pusta
         if (!znalezionoProdukty) {
             kontener.innerHTML = `<p class="text-neutral-500">Brak produktów w tej kategorii. Dodaj je w pliku produkty.js przypisując im kategorię "${aktywnyFiltr}".</p>`;
+        }
+
+        // PODŚWIETLANIE AKTYWNEGO FILTRA Z KRESKĄ
+        const linkiFiltrow = document.querySelectorAll('#menu-filtrow a');
+        if (aktywnyFiltr) {
+            linkiFiltrow.forEach(link => {
+                if (link.getAttribute('href').includes('filtr=' + aktywnyFiltr)) {
+                    // Dodajemy style: pomarańczowa lewa ramka, biały tekst, pogrubienie
+                    link.classList.add('border-l-2', 'border-amber-500', 'pl-3', 'text-neutral-100', 'font-bold');
+                    // Usuwamy szary hover i domyślny szary kolor
+                    link.classList.remove('hover:text-amber-500', 'text-neutral-400');
+                    
+                    // Podmieniamy link na czyszczący
+                    link.setAttribute('href', 'kategoria.html');
+                }
+            });
         }
     </script>
 </body>
