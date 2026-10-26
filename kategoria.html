@@ -178,8 +178,9 @@
         const tytulKategorii = document.getElementById('tytul-kategorii');
 
         // Zmiana tytułu zależnie od filtra
+        // Zmiana tytułu zależnie od filtra
         if (aktywnyFiltr) {
-            tytulKategorii.innerText = "Kategoria: " + aktywnyFiltr.toUpperCase();
+            tytulKategorii.innerText = aktywnyFiltr.toUpperCase();
         }
 
         let znalezionoProdukty = false;
