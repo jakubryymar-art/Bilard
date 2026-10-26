@@ -5,54 +5,37 @@ const bazaProduktow = {
     "pool-1": {
         nazwa: "Stół Pool AS",
         kategoria: "pool",
-        opis: "k",
+        opis: "",
         zdjecia: ["p1.png", "AS1.jpg", "AS2.jpg", "AS3.jpg", "AS4.jpg"]
     },
     "pool-2": {
-        nazwa: "Stół Pool Aviator",
+        nazwa: "Stół Pool Club",
         kategoria: "pool",
         opis: "Niezwykły stół inspirowany lotnictwem.",
-        zdjecia: ["pool2.jpg"]
+        zdjecia: ["p2.png"]
     },
     "pool-3": {
-        nazwa: "Stół Pool Model 3",
+        nazwa: "Stół Pool Pretorian",
         kategoria: "pool",
-        opis: "Opis trzeciego stołu pool.",
-        zdjecia: ["pool3.jpg"]
+        opis: "Niezwykły stół inspirowany lotnictwem.",
+        zdjecia: ["pretorian.jpg"]
     },
-    "pool-4": {
-        nazwa: "Stół Pool Model 4",
-        kategoria: "pool",
-        opis: "Opis czwartego stołu pool.",
-        zdjecia: ["pool4.jpg"]
-    },
-    "pool-5": {
-        nazwa: "Stół Pool Model 5",
-        kategoria: "pool",
-        opis: "Opis piątego stołu pool.",
-        zdjecia: ["pool5.jpg"]
-    },
-    "pool-6": {
-        nazwa: "Stół Pool Model 6",
-        kategoria: "pool",
-        opis: "Opis szóstego stołu pool.",
-        zdjecia: ["pool6.jpg"]
-    },
+
 
     // ==========================================
     // STOŁY SNOOKER (2)
     // ==========================================
     "snooker-1": {
-        nazwa: "Stół Snooker Turniejowy",
+        nazwa: "Stół Snooker Master",
         kategoria: "snooker",
         opis: "Pełnowymiarowy stół do snookera 12FT.",
-        zdjecia: ["snooker1.jpg"]
+        zdjecia: ["master.jpg"]
     },
     "snooker-2": {
-        nazwa: "Stół Snooker Klubowy",
+        nazwa: "Stół Snooker Piast",
         kategoria: "snooker",
         opis: "Wysokiej jakości stół snookerowy idealny do klubów.",
-        zdjecia: ["snooker2.jpg"]
+        zdjecia: ["piast.jpg"]
     },
 
     // ==========================================
@@ -62,19 +45,19 @@ const bazaProduktow = {
         nazwa: "Lampa Bilardowa 3-kloszowa",
         kategoria: "lampy",
         opis: "Klasyczna lampa zapewniająca idealne oświetlenie pola gry.",
-        zdjecia: ["lampa1.jpg"]
+        zdjecia: ["l1.png"]
     },
     "lampa-2": {
         nazwa: "Lampa Bilardowa 4-kloszowa",
         kategoria: "lampy",
         opis: "Długa lampa przeznaczona do większych stołów (9FT+).",
-        zdjecia: ["lampa2.jpg"]
+        zdjecia: ["l2.png"]
     },
     "lampa-3": {
         nazwa: "Lampa LED Nowoczesna",
         kategoria: "lampy",
         opis: "Energooszczędny panel LED równomiernie oświetlający stół.",
-        zdjecia: ["lampa3.jpg"]
+        zdjecia: ["l3.png"]
     },
 
     // ==========================================
@@ -92,12 +75,7 @@ const bazaProduktow = {
         opis: "Oszczędzający miejsce stojak do postawienia w rogu sali.",
         zdjecia: ["stojak2.jpg"]
     },
-    "stojak-3": {
-        nazwa: "Stojak Podłogowy Okrągły",
-        kategoria: "stojaki",
-        opis: "Klasyczny, obrotowy stojak na kije i bile.",
-        zdjecia: ["stojak3.jpg"]
-    },
+    
 
     // ==========================================
     // PIŁKARZYKI REKREACYJNE (3)
