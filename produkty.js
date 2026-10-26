@@ -6,7 +6,7 @@ const bazaProduktow = {
         nazwa: "Stół Pool AS",
         kategoria: "pool",
         opis: "Profesjonalny stół bilardowy wykonany z wyselekcjonowanego drewna.",
-        zdjecia: ["p1.png"]
+        zdjecia: ["p1.png", "p2.png", "p3.png"]
     },
     "pool-2": {
         nazwa: "Stół Pool Aviator",
