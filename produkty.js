@@ -5,7 +5,7 @@ const bazaProduktow = {
     "pool-1": {
         nazwa: "Stół Pool AS",
         kategoria: "pool",
-        opis: "Fajny stół",
+        opis: "Stół Pool AS to absolutny klasyk łączący w sobie kunszt rzemiosła stolarskiego oraz najwyższe parametry gry.",
         zdjecia: ["p1.png", "AS1.jpg", "AS2.jpg", "AS3.jpg", "AS4.jpg"]
     },
     "pool-2": {
